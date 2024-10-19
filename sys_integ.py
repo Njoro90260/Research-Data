@@ -1,7 +1,9 @@
 import numpy as np
 
 # Responses for the new set of 10 statements based on the system integration objective
-responses_integration = {
+
+def response_integration():
+    integration_responses = {
     "Statement 1": [4, 5, 3, 4, 5, 5, 3, 4, 4, 5, 4, 3, 5, 4, 5, 3, 4, 5, 5, 3, 4, 4, 5, 4, 5, 3, 4, 4, 5, 5, 3, 4, 4, 5, 4, 3, 5, 4, 5, 4, 5, 4],
     "Statement 2": [3, 4, 3, 4, 5, 5, 4, 3, 4, 5, 4, 4, 5, 4, 4, 3, 4, 5, 4, 3, 4, 4, 5, 4, 5, 3, 3, 4, 5, 4, 4, 3, 4, 5, 4, 3, 5, 4, 4, 3, 4, 5],
     "Statement 3": [5, 4, 4, 5, 5, 4, 3, 4, 5, 4, 3, 5, 4, 5, 4, 3, 5, 4, 5, 4, 3, 4, 5, 4, 4, 3, 4, 4, 5, 5, 4, 3, 4, 5, 4, 4, 4, 5, 3, 4, 4, 5],
@@ -12,12 +14,16 @@ responses_integration = {
     "Statement 8": [4, 5, 3, 4, 5, 5, 3, 4, 4, 5, 3, 4, 4, 5, 3, 4, 4, 4, 5, 3, 3, 4, 5, 4, 5, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 3, 5, 4, 4, 4, 5, 3],
     "Statement 9": [5, 4, 3, 4, 5, 4, 4, 3, 5, 4, 4, 4, 5, 4, 4, 3, 5, 4, 4, 4, 3, 4, 5, 4, 4, 4, 4, 4, 4, 5, 4, 3, 4, 5, 4, 3, 5, 4, 5, 4, 5, 4],
     "Statement 10": [3, 4, 4, 5, 4, 5, 3, 4, 5, 4, 4, 3, 5, 4, 4, 3, 5, 4, 5, 3, 3, 4, 4, 4, 5, 4, 4, 4, 5, 4, 3, 4, 4, 5, 4, 4, 5, 4, 4, 3, 5, 4]
-}
+    }
+    return integration_responses
+r = response_integration()
+results = {statement: (np.mean(data), np.std(data)) for statement, data in r.items()}
+print(results)
 
 # Calculate percentage for each unique response per statement
 response_percentages = {}
 
-for statement, data in responses_integration.items():
+for statement, data in r.items():
     unique, counts = np.unique(data, return_counts=True)
     percentages = {int(response): round((count / len(data)) * 100, 2) for response, count in zip(unique, counts)}
     response_percentages[statement] = percentages
