@@ -1,15 +1,14 @@
 import pandas as pd
 from scipy.stats import spearmanr
 from docx import Document
-from docx import Document
 from docx.shared import Inches
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 
 # Load data from CSV files
-df = pd.read_csv('responses_data.csv')  # Load the response data from CSV
-correlation_matrix = pd.read_csv('correlation_matrix.csv', index_col=0)  # Load the correlation matrix from CSV
+df = pd.read_csv('data/responses_data.csv')  # Load the response data from CSV
+correlation_matrix = pd.read_csv('data/correlation_matrix.csv', index_col=0)  # Load the correlation matrix from CSV
 
 # Get the number of statements
 num_statements = len([col for col in df.columns if 'Salting_Techniques_Statement' in col])
@@ -152,4 +151,4 @@ for i in range(num_statements):
 format_table(table)
 
 # Save the formatted document
-doc.save('correlation_results_clean.docx')
+doc.save('docs/correlation_results_clean.docx')

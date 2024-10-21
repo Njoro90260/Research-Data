@@ -25,13 +25,13 @@ else:
     df = pd.DataFrame(data)
 
     # Save the DataFrame to a CSV file
-    df.to_csv('responses_data.csv', index=False)  # 'responses_data.csv' is the file name
+    df.to_csv('data/responses_data.csv', index=False)  # 'responses_data.csv' is the file name
 
     # Calculate Spearman correlation matrix
     correlation_matrix = df.corr(method='spearman')
 
     # Save the correlation matrix to another CSV file
-    correlation_matrix.to_csv('correlation_matrix.csv')
+    correlation_matrix.to_csv('data/correlation_matrix.csv')
 
     # Print the DataFrame and correlation matrix for verification
     print("Responses DataFrame saved to 'responses_data.csv':")
