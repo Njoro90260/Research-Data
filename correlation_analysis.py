@@ -24,14 +24,19 @@ else:
 
     df = pd.DataFrame(data)
 
-    # Print the DataFrame for verification
-    print("DataFrame:")
-    print(df)
+    # Save the DataFrame to a CSV file
+    df.to_csv('responses_data.csv', index=False)  # 'responses_data.csv' is the file name
 
     # Calculate Spearman correlation matrix
     correlation_matrix = df.corr(method='spearman')
 
-    print("Spearman Correlation Matrix:")
+    # Save the correlation matrix to another CSV file
+    correlation_matrix.to_csv('correlation_matrix.csv')
+
+    # Print the DataFrame and correlation matrix for verification
+    print("Responses DataFrame saved to 'responses_data.csv':")
+    print(df)
+    print("\nSpearman Correlation Matrix saved to 'correlation_matrix.csv':")
     print(correlation_matrix)
 
     # Calculate pairwise correlations for each statement
