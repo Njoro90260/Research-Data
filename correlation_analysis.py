@@ -25,7 +25,7 @@ else:
     df = pd.DataFrame(data)
 
     # Save the DataFrame to a CSV file
-    df.to_csv('data/responses_data.csv', index=False)  # 'responses_data.csv' is the file name
+    df.to_csv('data/responses_data.csv', index=False)  
 
     # Calculate Spearman correlation matrix
     correlation_matrix = df.corr(method='spearman')
