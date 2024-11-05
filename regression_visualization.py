@@ -7,12 +7,12 @@ from sklearn.linear_model import LinearRegression
 df = pd.read_csv('data/responses_data.csv') 
 
 # Prepare the data for regression
-salting_techniques = df[f'test_responses'].values
-integration_practices =  df[f'test1_responses'].values
+test = df[f'test_Responses'].values
+test1 =  df[f'test1_Responses'].values
 
 # Flatten the arrays for regression
-X = salting_techniques.flatten().reshape(-1, 1)  # Features (Salting Techniques)
-y = integration_practices.flatten()  # Target (Integration Practices)
+X = test.flatten().reshape(-1, 1)  
+y = test1.flatten()  # Target (Integration Practices)
 
 # Create and fit the Linear Regression model
 reg_model = LinearRegression()
@@ -27,9 +27,9 @@ plt.scatter(X, y, color='blue', label='Actual data points', alpha=0.6)
 plt.plot(X, y_pred, color='red', linewidth=2, label='Regression line')
 
 # Adding labels and title
-plt.xlabel('Average Response for Salting Techniques')
-plt.ylabel('Average Response for Integration Practices')
-plt.title('Linear Regression: Salting Techniques vs Integration Practices')
+plt.xlabel('Average Response for test')
+plt.ylabel('Average Response for test1')
+plt.title('Linear Regression: test vs test1')
 
 # Adding legend
 plt.legend()
