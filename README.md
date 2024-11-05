@@ -34,7 +34,7 @@ Follow these instructions to set up your environment and run the scripts.
    With the virtual environment active, install the dependencies listed in `requirements.txt`:
    ```bash
    pip install -r requirements.txt
-3. ** Run the Analysis Scripts
+3. **Run the Analysis Scripts**
    - First, execute test.py and test1.py to generate the responses data
    - If you have additional datasets, copy `test.py` as `test.py2`, `test.py3`, etc., and modify the response data as needed.
    - **Important**: Remember to import each response script (`test.py`, `test1.py`, etc.) in corelation_analysis.py to ensure all data is included in the correlation analysis.
