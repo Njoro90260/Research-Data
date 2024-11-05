@@ -6,12 +6,8 @@ import numpy as np
 df = pd.read_csv('data/responses_data.csv')
 
 # Prepare the data for regression with the correct column names
-test = df[f'test_Responses'].values
-test1 = df[f'test1_Responses'].values
-
-# Flatten the arrays for regression (assuming a simple regression for overall relationship)
-X = test.flatten().reshape(-1, 1)  # Independent variable
-y = test1.flatten()  # Dependent variable
+X = df['test_Responses'].values.reshape(-1, 1)  # Independent variable
+y = df['test1_Responses'].values  # Dependent variable
 
 # Create and fit the Linear Regression model
 reg_model = LinearRegression()
