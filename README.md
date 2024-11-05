@@ -79,6 +79,3 @@ Please ensure that your code adheres to the existing style and structure. If you
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 This guide should help you set up, configure, and extend the for your analysis. For any issues or additional customization, feel free to open an issue in the repository.
-
-This `README.md` provides an overview, setup instructions for both Windows and Linux users, a usage guide for running the scripts, and placeholders for screenshots and additional notes. Once you upload the screenshots, you can add image links in the **Screenshots** section.
-
