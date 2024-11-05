@@ -51,11 +51,16 @@ Follow these instructions to set up your environment and run the scripts.
 
 ###Screenshots
     - Refer to this section to see where to modify the number of responses in esch script.
+![counts](https://github.com/user-attachments/assets/1c562f8d-a42a-4ef8-ae95-4ebbfcde899b)
+    - Change the dictionary counts to fit your response rate (in this example 100 people strongly agreed, 50 Agreed, 100 Neutral, 20 disagreed, and 0 strongly disagreed).
+    - Make these changes in the `test.py`, `test1.py`, `test2.py`, etc.
 
+![correlations](https://github.com/user-attachments/assets/e66ee879-4608-4eae-a158-337396e09976)
+- Make these changes in `correlation_analysis.py`.
+- **importing the data in correlation_analysis.py**
+  
+![importing data](https://github.com/user-attachments/assets/6567aef6-19ff-4c65-9c83-954000540d3b)
 
-This guide should help you set up, configure, and extend the for your analysis. For any issues or additional customization, feel free to open an issue in the repository.
-
-This `README.md` provides an overview, setup instructions for both Windows and Linux users, a usage guide for running the scripts, and placeholders for screenshots and additional notes. Once you upload the screenshots, you can add image links in the **Screenshots** section.
 
 ## Contributing
 
@@ -72,4 +77,8 @@ Please ensure that your code adheres to the existing style and structure. If you
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+This guide should help you set up, configure, and extend the for your analysis. For any issues or additional customization, feel free to open an issue in the repository.
+
+This `README.md` provides an overview, setup instructions for both Windows and Linux users, a usage guide for running the scripts, and placeholders for screenshots and additional notes. Once you upload the screenshots, you can add image links in the **Screenshots** section.
 
