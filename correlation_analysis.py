@@ -1,28 +1,25 @@
 import pandas as pd
 from scipy.stats import spearmanr
-from salting_tq import response  # Assuming response() returns a dictionary
-from sys_integ import response_integration  # Assuming response_integration() returns a dictionary
+from test import create_responses as create_test_responses
+from test1 import create_responses as create_test1_responses
 
-# Get the response data
-salting_responses = response()  # Call the function to get salting data
-integration_responses = response_integration()  # Call the function to get integration data
+# Define the counts for each response category (Example dictionary, replace with actual counts)
+test_counts = {5: 100, 4: 50, 3: 100, 2: 50, 1: 0}  # Example for test.py
+test1_counts = {5: 0, 4: 50, 3: 100, 2: 50, 1: 100}  # Example for test1.py with slight variations
 
-# Extract the response lists for all statements
-salting_techniques = [salting_responses[key] for key in salting_responses.keys()]
-integration_practices = [integration_responses[key] for key in integration_responses.keys()]
+# Generate response lists
+test_responses = create_test_responses(test_counts)
+test1_responses = create_test1_responses(test1_counts)
 
 # Check the length of the response lists
-num_statements = len(salting_techniques)
-if num_statements != len(integration_practices):
+if len(test_responses) != len(test1_responses):
     print("Error: The lengths of the data lists are not equal. Please ensure all data has the same length.")
 else:
     # Create a DataFrame using the extracted lists
-    data = {}
-    for i in range(num_statements):
-        data[f'Salting_Techniques_Statement_{i + 1}'] = salting_techniques[i]
-        data[f'Integration_Practices_Statement_{i + 1}'] = integration_practices[i]
-
-    df = pd.DataFrame(data)
+    df = pd.DataFrame({
+        'test_Responses': test_responses,
+        'test1_Responses': test1_responses
+    })
 
     # Save the DataFrame to a CSV file
     df.to_csv('data/responses_data.csv', index=False)  
@@ -40,6 +37,5 @@ else:
     print(correlation_matrix)
 
     # Calculate pairwise correlations for each statement
-    for i in range(num_statements):
-        spearman_corr, _ = spearmanr(df[f'Salting_Techniques_Statement_{i + 1}'], df[f'Integration_Practices_Statement_{i + 1}'])
-        print(f"Spearman Correlation between Salting Techniques Statement {i + 1} and Integration Practices Statement {i + 1}: {spearman_corr:.2f}")
+    spearman_corr, _ = spearmanr(df['test_Responses'], df['test1_Responses'])
+    print(f"Spearman Correlation between test responses and test1 responses: {spearman_corr:.2f}")

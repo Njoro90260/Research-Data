@@ -5,13 +5,13 @@ import numpy as np
 # Load the data from CSV files
 df = pd.read_csv('data/responses_data.csv')
 
-# Prepare the data for regression
-salting_techniques = df[[f'Salting_Techniques_Statement_{i + 1}' for i in range(10)]].values
-integration_practices = df[[f'Integration_Practices_Statement_{i + 1}' for i in range(10)]].values
+# Prepare the data for regression with the correct column names
+test = df[f'test_Responses'].values
+test1 = df[f'test1_Responses'].values
 
 # Flatten the arrays for regression (assuming a simple regression for overall relationship)
-X = salting_techniques.flatten().reshape(-1, 1)  # Features (Salting Techniques)
-y = integration_practices.flatten()  # Target (Integration Practices)
+X = test.flatten().reshape(-1, 1)  # Independent variable
+y = test1.flatten()  # Dependent variable
 
 # Create and fit the Linear Regression model
 reg_model = LinearRegression()

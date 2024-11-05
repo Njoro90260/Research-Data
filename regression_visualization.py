@@ -7,8 +7,8 @@ from sklearn.linear_model import LinearRegression
 df = pd.read_csv('data/responses_data.csv') 
 
 # Prepare the data for regression
-salting_techniques = df[[f'Salting_Techniques_Statement_{i + 1}' for i in range(10)]].values
-integration_practices = df[[f'Integration_Practices_Statement_{i + 1}' for i in range(10)]].values
+salting_techniques = df[f'test_responses'].values
+integration_practices =  df[f'test1_responses'].values
 
 # Flatten the arrays for regression
 X = salting_techniques.flatten().reshape(-1, 1)  # Features (Salting Techniques)
