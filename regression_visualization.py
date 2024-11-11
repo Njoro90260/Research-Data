@@ -22,7 +22,7 @@ reg_model.fit(X, y)
 y_pred = reg_model.predict(X)
 
 # Plot the data
-plt.style.use('seaborn')
+plt.style.use('seaborn-v0_8-whitegrid')
 plt.scatter(X, y, color='blue', label='Actual data points', alpha=0.6)
 plt.plot(X, y_pred, color='red', linewidth=2, label='Regression line')
 

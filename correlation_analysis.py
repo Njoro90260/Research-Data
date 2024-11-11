@@ -4,8 +4,8 @@ from test import create_responses as create_test_responses
 from test1 import create_responses as create_test1_responses
 
 # Define the counts for each response category (Example dictionary, replace with actual counts)
-test_counts = {5: 100, 4: 50, 3: 100, 2: 50, 1: 0}  # Example for test.py
-test1_counts = {5: 0, 4: 50, 3: 100, 2: 50, 1: 100}  # Example for test1.py with slight variations
+test_counts = {5: 78, 4: 65, 3: 46, 2: 12, 1: 0}  # Example for test.py
+test1_counts = {5: 46, 4: 55, 3: 88, 2: 0, 1: 12}  # Example for test1.py with slight variations
 
 # Generate response lists
 test_responses = create_test_responses(test_counts)

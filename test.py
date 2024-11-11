@@ -29,10 +29,10 @@ def calculate_response_percentages(responses):
 num_statements = 10  # Set the number of statements
 # Define the specific counts for responses
 counts = {
-    5: 100,  # Strongly Agree
-    4: 50,   # Agree
-    3: 100,  # Neutral
-    2: 50,   # Disagree
+    5: 78,  # Strongly Agree
+    4: 65,   # Agree
+    3: 46,  # Neutral
+    2: 12,   # Disagree
     1: 0     # Strongly Disagree (none in this case)
 }
 
