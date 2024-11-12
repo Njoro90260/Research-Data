@@ -2,7 +2,9 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
+import seaborn as sns 
 
+sns.set_style('whitegrid')
 # Load the data from CSV files
 df = pd.read_csv('data/responses_data.csv') 
 
@@ -22,7 +24,6 @@ reg_model.fit(X, y)
 y_pred = reg_model.predict(X)
 
 # Plot the data
-plt.style.use('seaborn')
 plt.scatter(X, y, color='blue', label='Actual data points', alpha=0.6)
 plt.plot(X, y_pred, color='red', linewidth=2, label='Regression line')
 
